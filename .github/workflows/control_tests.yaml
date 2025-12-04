@@ -23,6 +23,7 @@ jobs:
           pytest
 
   create_commit:
+    if: github.actor != 'github-actions[bot]'
     name: variables
     environment: Env_test
     runs-on: ubuntu-latest
