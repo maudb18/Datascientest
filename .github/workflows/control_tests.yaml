@@ -26,7 +26,7 @@ jobs:
     name: variables
     runs-on: ubuntu-latest
     permissions:
-      content: write
+      contents: write
     steps:
       - name: Push a file to our repo
         run: |
