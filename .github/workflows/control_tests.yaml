@@ -48,5 +48,3 @@ jobs:
           ls -a -l
           git add .
           git commit -m "random file from action"
-          echo "L'acteur qui a déclenché ce workflow est : ${{ github.actor }}"
-          git push
