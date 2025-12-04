@@ -22,5 +22,26 @@ jobs:
         run: |
           pytest
 
-      - name: Run flake8
-        uses: py-actions/flake8@v2
+  create_commit:
+    name: variables
+    runs-on: ubuntu-latest
+    permissions:
+      content: write
+    steps:
+      - name: Push a file to our repo
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.AUTH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "my-bot@bot.com"
+          git config --global user.name "my-bot"
+          git fetch
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull
+          pytest >> log_pytest.txt
+          ls -a -l
+          git add .
+          git commit -m "random file from action"
+          git push
