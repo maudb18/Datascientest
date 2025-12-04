@@ -24,6 +24,7 @@ jobs:
 
   create_commit:
     name: variables
+    environment: Env_test
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,10 +34,6 @@ jobs:
           pwd
           ls -a
           git init
-          echo "données sensibles"
-          echo "$GITHUB_ACTOR"
-          echo "${{ secrets.AUTH_TOKEN }}"
-          echo "$GITHUB_REPOSITORY"
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.AUTH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           git config --global user.email "my-bot@bot.com"
           git config --global user.name "my-bot"
