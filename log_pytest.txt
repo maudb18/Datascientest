@@ -1582,3 +1582,11 @@ collected 4 items
 file_test.py ....                                                        [100%]
 
 ============================== 4 passed in 0.01s ===============================
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/runner/work/Datascientest/Datascientest
+collected 4 items
+
+file_test.py ....                                                        [100%]
+
+============================== 4 passed in 0.01s ===============================
